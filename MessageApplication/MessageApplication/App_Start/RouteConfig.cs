@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace PTS_4_Full_House
+namespace MessageApplication
 {
     public static class RouteConfig
     {

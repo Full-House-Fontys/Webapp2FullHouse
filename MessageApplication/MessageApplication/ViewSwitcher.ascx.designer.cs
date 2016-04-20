@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PTS_4_Full_House {
+namespace MessageApplication {
     
     
     public partial class ViewSwitcher {
