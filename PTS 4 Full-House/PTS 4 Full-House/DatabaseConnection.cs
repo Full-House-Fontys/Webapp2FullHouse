@@ -14,7 +14,7 @@ namespace PTS_4_Full_House
 
         public DatabaseConnection()
         {
-            connString.ConnectionString = ConfigurationManager.ConnectionStrings["FullHouseConnection"].ConnectionString;
+            connString.ConnectionString = ConfigurationManager.ConnectionStrings["SQLCONNECTION"].ConnectionString;
             if (connString != null)
             {
                 Console.WriteLine("There is a connection");
