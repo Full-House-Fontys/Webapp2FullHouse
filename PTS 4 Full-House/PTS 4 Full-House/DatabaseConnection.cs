@@ -32,12 +32,12 @@ namespace PTS_4_Full_House
                 SqlDataReader sqlReader = sqlCommand.ExecuteReader();
                 while (sqlReader.Read())
                 {
-                    users.Add(new User(sqlReader["Achternaam"].ToString(), sqlReader["Tussenvoegsel"].ToString(), sqlReader["Voornaam"].ToString(), sqlReader["Gebruikersnaam"].ToString(), sqlReader["Wachtwoord"].ToString(), sqlReader["Facebook"].ToString(), sqlReader["Twitter"].ToString()));
+                    users.Add(new User(Convert.ToInt32(sqlReader["ID"].ToString()),sqlReader["Achternaam"].ToString(), sqlReader["Tussenvoegsel"].ToString(), sqlReader["Voornaam"].ToString(), sqlReader["Gebruikersnaam"].ToString(), sqlReader["Wachtwoord"].ToString(), sqlReader["Facebook"].ToString(), sqlReader["Twitter"].ToString()));
                 }
             }
             catch (Exception exception)
             {
-                Console.Write("Exception has been thrown");
+                Console.Write(exception);
             }
             finally
             {
@@ -49,6 +49,28 @@ namespace PTS_4_Full_House
         {
             getUsersFromDatabase();
             return users;
+        }
+
+        public void makeNotification(String title, String Message, int Id) {
+            try
+            {
+                connString.Open();
+                String Command = "INSERT INTO MELDING(Titel, Inhoud, Tijdstip, GebruikerID) VALUES (@Titel, @Inhoud, GETDATE(), @GebruikerID)";
+                SqlCommand sqlCommand = new SqlCommand(Command, connString);
+                sqlCommand.Parameters.AddWithValue("@Titel", title);
+                sqlCommand.Parameters.AddWithValue("@Inhoud", Message);
+                sqlCommand.Parameters.AddWithValue("@GebruikerID", Id);
+          
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                Console.Write(exception);
+            }
+            finally
+            {
+                connString.Close();
+            }
         }
     }
 }

@@ -5,16 +5,18 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using PTS_4_Full_House.Models;
+using System.Collections.Generic;
 
 namespace PTS_4_Full_House.Account
 {
     public partial class Login : Page
     {
+        private DatabaseConnection dbConnection;
         protected void Page_Load(object sender, EventArgs e)
         {
+            dbConnection = new DatabaseConnection();
             RegisterHyperLink.NavigateUrl = "Register";
-            // Enable this once you have account confirmation enabled for password reset functionality
-            //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
+        
             OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
@@ -27,39 +29,29 @@ namespace PTS_4_Full_House.Account
         {
             if (IsValid)
             {
-                /*// Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+                List<User> users = dbConnection.getUsers();
+              
+                int SignInId = checkUser(users);
+                if (SignInId > 0){
+                    Session["UserId"] = SignInId;
+                    Response.Redirect("../Notification.aspx");
+                }
+                else {
+                    FailureText.Text = "Invalid login attempt";
+                    ErrorMessage.Visible = true;
+                }
+              
+            }
+        }
 
-                // This doen't count login failures towards account lockout
-                // To enable password failures to trigger lockout, change to shouldLockout: true
-                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);*/
-
-                // Hier komt de check voor de database
-                SignInStatus result = SignInStatus.Success;
-                switch (result)
-                {
-                    case SignInStatus.Success:
-                        Page.ClientScript.RegisterStartupScript(
-                        this.GetType(), "OpenWindow", "window.open('Register.aspx','_newtab');", true);
-                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                        break;
-                    case SignInStatus.LockedOut:
-                        Response.Redirect("/Account/Lockout");
-                        break;
-                    case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}", 
-                                                        Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
-                        break;
-                    case SignInStatus.Failure:
-                    default:
-                        FailureText.Text = "Invalid login attempt";
-                        ErrorMessage.Visible = true;
-                        break;
+        private int checkUser(List<User> users) {
+            int status = 0;
+            foreach (User user in users) {
+                if (user.Username.Equals(Username.Text) && user.Password.Equals(Password.Text)) {
+                    status = user.Id;
                 }
             }
+            return status;
         }
     }
 }
