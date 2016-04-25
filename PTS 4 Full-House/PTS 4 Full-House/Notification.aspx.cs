@@ -13,6 +13,17 @@ namespace PTS_4_Full_House
         protected void Page_Load(object sender, EventArgs e)
         {
             dbConnection = new DatabaseConnection();
+            try
+            {
+                if (Convert.ToInt32(Session["UserId"]) <= 0)
+                {
+                    Response.Redirect("/Account/Login.aspx");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                Response.Redirect("/Account/Login.aspx");
+            }
         }
 
         protected void MakeNotification(object sender, EventArgs e) {
