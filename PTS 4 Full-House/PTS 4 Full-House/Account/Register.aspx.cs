@@ -11,25 +11,35 @@ namespace PTS_4_Full_House.Account
 {
     public partial class Register : Page
     {
+        DatabaseConnection dbConnection;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            dbConnection = new DatabaseConnection();
+        }
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
-            IdentityResult result = manager.Create(user, Password.Text);
-            if (result.Succeeded)
-            {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
-
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+            User newUser = new User(0, LastName.Text, Prefix.Text, FirstName.Text, Username.Text, Password.Text, null, null);
+            Boolean validUser = true;
+            foreach (User user in dbConnection.getUsers()) {
+                if (user.Username.Equals(newUser.Username)) {
+                    validUser = false;
+                }
+            }
+            if (validUser) {
+                try
+                {
+                    dbConnection.createNewUser(newUser);
+                }
+                catch (Exception exception) {
+                    ErrorMessage.Text = "Lost connection";
+                }
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
-            else 
+            else
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                ErrorMessage.Text = "This username is already in use";
             }
         }
     }

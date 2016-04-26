@@ -72,5 +72,33 @@ namespace PTS_4_Full_House
                 connString.Close();
             }
         }
+
+        public void createNewUser(User newUser) {
+           try
+            {
+                connString.Open();
+                String Command = "INSERT INTO Gebruiker(Achternaam, Tussenvoegsel, Voornaam, Gebruikersnaam, Wachtwoord, LocatieX, LocatieY, Emailadres) VALUES (@Achternaam, @Tussenvoegsel, @Voornaam, @Gebruikersnaam, @Wachtwoord, @LocatieX, @LocatieY, @Emailadres)";
+                SqlCommand sqlCommand = new SqlCommand(Command, connString);
+                sqlCommand.Parameters.AddWithValue("@Achternaam", newUser.LastName);
+                sqlCommand.Parameters.AddWithValue("@Tussenvoegsel", newUser.Prefix);
+                sqlCommand.Parameters.AddWithValue("@Voornaam", newUser.FirstName);
+                sqlCommand.Parameters.AddWithValue("@Gebruikersnaam", newUser.Username);
+                sqlCommand.Parameters.AddWithValue("@Wachtwoord", newUser.Password);
+                sqlCommand.Parameters.AddWithValue("@LocatieX", 0.0);
+                sqlCommand.Parameters.AddWithValue("@LocatieY", 0.0);
+                sqlCommand.Parameters.AddWithValue("@Emailadres", null);
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("SQL exception");
+            }
+            finally
+            {
+                connString.Close();
+            }
+        }
+
+
     }
 }

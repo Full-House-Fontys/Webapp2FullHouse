@@ -11,19 +11,41 @@
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Gebruikersnaam</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                     CssClass="text-danger" ErrorMessage="The email field is required." />
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Wachtwoord</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
                     CssClass="text-danger" ErrorMessage="The password field is required." />
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">Voornaam</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="FirstName"  CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
+                    CssClass="text-danger" ErrorMessage="Voornaam is vereist" />
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Prefix" CssClass="col-md-2 control-label">Tussenvoegsel</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Prefix" CssClass="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="LastName" CssClass="col-md-2 control-label">Achternaam</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
+                    CssClass="text-danger" ErrorMessage="Achternaam is vereist" />
             </div>
         </div>
         <div class="form-group">
