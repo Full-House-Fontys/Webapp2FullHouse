@@ -35,7 +35,7 @@ namespace PTS_4_Full_House
                     users.Add(new User(Convert.ToInt32(sqlReader["ID"].ToString()),sqlReader["Achternaam"].ToString(), sqlReader["Tussenvoegsel"].ToString(), sqlReader["Voornaam"].ToString(), sqlReader["Gebruikersnaam"].ToString(), sqlReader["Wachtwoord"].ToString(), sqlReader["Facebook"].ToString(), sqlReader["Twitter"].ToString()));
                 }
             }
-            catch (Exception exception)
+            catch (SqlException exception)
             {
                 Console.Write(exception);
             }
@@ -63,7 +63,7 @@ namespace PTS_4_Full_House
           
                 sqlCommand.ExecuteNonQuery();
             }
-            catch (Exception exception)
+            catch (SqlException exception)
             {
                 Console.Write(exception);
             }
