@@ -19,7 +19,7 @@ namespace PTS_4_Full_House.Account
         
             OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
-            if (!String.IsNullOrEmpty(returnUrl))
+            if (!String.IsNullOrEmpty(returnUrl)) 
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
@@ -34,6 +34,7 @@ namespace PTS_4_Full_House.Account
                 int SignInId = checkUser(users);
                 if (SignInId > 0){
                     Session["UserId"] = SignInId;
+                    Session["Username"] = Username.Text;
                     Response.Redirect("../Notification.aspx");
                 }
                 else {

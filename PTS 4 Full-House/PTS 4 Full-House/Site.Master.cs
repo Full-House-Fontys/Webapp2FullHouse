@@ -69,7 +69,10 @@ namespace PTS_4_Full_House
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /*if (Session["Username"] != null && String.IsNullOrWhiteSpace(Session["Username"].ToString())){
+                LoginView lv = new LoginView();
+                lv.EnableViewState = false;
+            }*/
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

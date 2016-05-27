@@ -31,11 +31,11 @@ namespace PTS_4_Full_House.Account
                 try
                 {
                     dbConnection.createNewUser(newUser);
+                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                 }
                 catch (Exception exception) {
                     ErrorMessage.Text = "Lost connection";
                 }
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else
             {

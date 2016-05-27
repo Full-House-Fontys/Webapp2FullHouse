@@ -65,7 +65,7 @@ namespace PTS_4_Full_House
             }
             catch (SqlException exception)
             {
-                Console.Write(exception);
+                throw exception;
             }
             finally
             {
@@ -86,12 +86,12 @@ namespace PTS_4_Full_House
                 sqlCommand.Parameters.AddWithValue("@Wachtwoord", newUser.Password);
                 sqlCommand.Parameters.AddWithValue("@LocatieX", 0.0);
                 sqlCommand.Parameters.AddWithValue("@LocatieY", 0.0);
-                sqlCommand.Parameters.AddWithValue("@Emailadres", null);
+                sqlCommand.Parameters.AddWithValue("@Emailadres", "");
                 sqlCommand.ExecuteNonQuery();
             }
             catch (Exception exception)
             {
-                throw new Exception("SQL exception");
+                throw exception;
             }
             finally
             {
