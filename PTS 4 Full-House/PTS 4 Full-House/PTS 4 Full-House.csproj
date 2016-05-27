@@ -198,15 +198,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\ReceiveJavaNotificationsClient\configuration91.svcinfo" />
-    <None Include="Service References\ReceiveJavaNotificationsClient\configuration.svcinfo" />
-    <Content Include="Service References\ReceiveJavaNotificationsClient\PTS_4_Full_House.ReceiveJavaNotificationsClient.sayHelloWorldFromResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\ReceiveJavaNotificationsClient\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="TestingWebserviceServer.asmx" />
     <Content Include="Webpages\GetMessagesFromCims.aspx" />
     <Content Include="Webpages\Notification.aspx" />
@@ -254,10 +245,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <None Include="Service References\ReceiveJavaNotificationsClient\HelloWorld.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ReceiveJavaNotificationsClient\HelloWorldService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -292,11 +279,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="Service References\ReceiveJavaNotificationsClient\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="TestingWebserviceServer.asmx.cs">
       <DependentUpon>TestingWebserviceServer.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -353,9 +335,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ReceiveJavaNotificationsClient\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

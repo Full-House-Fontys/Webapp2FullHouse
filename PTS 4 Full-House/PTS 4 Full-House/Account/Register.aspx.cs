@@ -35,6 +35,7 @@ namespace PTS_4_Full_House.Account
                 }
                 catch (Exception exception) {
                     ErrorMessage.Text = "Lost connection";
+                    Console.Write(exception.Message);
                 }
             }
             else

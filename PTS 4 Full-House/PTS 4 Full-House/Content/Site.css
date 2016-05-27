@@ -32,7 +32,24 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
+}
+
+.message:first-child {
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:#eeeeee;
+}
+
+.message {
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:#eeeeee;
+}
+
+.message:last-child {
+    border:none;
 }

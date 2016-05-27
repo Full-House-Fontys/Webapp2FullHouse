@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using PTS_4_Full_House.ReceiveJavaNotificationsClient;
+//using PTS_4_Full_House.ReceiveJavaNotificationsClient;
 
 namespace PTS_4_Full_House.Webpages
 {
