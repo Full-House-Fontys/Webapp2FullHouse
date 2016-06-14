@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
+    <Content Include="Account\LoginFacebook.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -256,12 +257,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\FaceBookUser.cs" />
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LoginFacebook.aspx.cs">
+      <DependentUpon>LoginFacebook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LoginFacebook.aspx.designer.cs">
+      <DependentUpon>LoginFacebook.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>

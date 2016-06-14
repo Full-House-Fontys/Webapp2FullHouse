@@ -28,7 +28,8 @@
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                                 CssClass="text-danger" ErrorMessage="The password field is required." />
                         </div>
                     </div>
                     <div class="form-group">
@@ -52,15 +53,7 @@
                     <%-- Enable this once you have account confirmation enabled for password reset functionality
                     <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
                     --%>
-                </p>
-                <div>
-                    <p>
-                        <br /><br />
-                        <asp:Label runat="server" CssClass="col-md-2 control-label">Log in with: </asp:Label>
-                        <asp:Button runat="server" OnClick="LogInWithFacebook" Text="F" CssClass="btn btn-social-facebook" ImageUrl="Images/twitter-icon.png"/>
-                        <asp:Button runat="server" OnClick="LogInWithTwitter" Text="T" CssClass="btn btn-default" ImageUrl="Images/twitter-icon.png"/>
-                    </p>
-                </div>   
+                </p> 
             </section>
         </div>
 

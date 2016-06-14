@@ -39,5 +39,16 @@ namespace PTS_4_Full_House.Account
         {
             return Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().Select(t => t.AuthenticationType);
         }
+
+        protected void LogInWithFacebook(object sender, EventArgs e)
+        {
+            Response.Redirect("../Account/LoginFacebook.aspx");
+            return;
+        }
+
+        protected void LogInWithTwitter(object sender, EventArgs e)
+        {
+            return;
+        }
     }
 }
