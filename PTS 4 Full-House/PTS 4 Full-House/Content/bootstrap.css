@@ -47,6 +47,10 @@ audio:not([controls]) {
   height: 0;
 }
 
+iframe{
+    width: 100%;
+}
+
 [hidden] {
   display: none;
 }

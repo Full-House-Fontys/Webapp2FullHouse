@@ -53,3 +53,12 @@ input[type="select"] {
 .message:last-child {
     border:none;
 }
+
+.airQuality{
+    height:500px;
+}
+
+.airIFrame{
+    /*width:inherit;*/
+    height:inherit;
+}
