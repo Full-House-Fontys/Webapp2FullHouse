@@ -10,7 +10,7 @@ namespace PTS_4_Full_House
     /// <summary>
     /// Summary description for TestingWebserviceServer
     /// </summary>
-    [WebService(Namespace = "http://CimsApp.Fontys")]
+    [WebService(Namespace = "http://localhost/CimsService/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -21,6 +21,7 @@ namespace PTS_4_Full_House
         public String PublishEmergencyMessage(String title, String message)
         {
             Webpages.GetMessagesFromCims.publishOnPage(title, message);
+            
             return "Dit gaat naar intellij";
         }
     }

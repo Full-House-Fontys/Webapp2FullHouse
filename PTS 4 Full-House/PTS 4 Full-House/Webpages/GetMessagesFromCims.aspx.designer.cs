@@ -11,5 +11,14 @@ namespace PTS_4_Full_House.Webpages {
     
     
     public partial class GetMessagesFromCims {
+        
+        /// <summary>
+        /// MessagePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel MessagePanel;
     }
 }

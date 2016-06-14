@@ -35,7 +35,7 @@ namespace PTS_4_Full_House.Account
                 if (SignInId > 0){
                     Session["UserId"] = SignInId;
                     Session["Username"] = Username.Text;
-                    Response.Redirect("../Notification.aspx");
+                    Response.Redirect("../Webpages/Notification.aspx");
                 }
                 else {
                     FailureText.Text = "Invalid login attempt";

@@ -4,13 +4,8 @@
     <h1><%: Title %></h1>
 
     <div class="allMessages">
-        <div class="message">
-            <h2>Titel</h2>
-            <p>Lorem ipsum dolor sit amet.... Dit is de inhoud van een melding.</p>
-        </div>
-        <div class="message">
-            <h2>Titel2</h2>
-            <p>Lorem ipsum dolor sit amet.... Dit is de inhoud van een melding.</p>
-        </div>
+        <asp:Panel ID="MessagePanel" runat="server">
+        </asp:Panel>
+
     </div>
 </asp:Content>
