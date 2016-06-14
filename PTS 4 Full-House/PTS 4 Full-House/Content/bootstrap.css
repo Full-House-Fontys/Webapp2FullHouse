@@ -2089,6 +2089,47 @@ fieldset[disabled] .btn-default.active {
   border-color: #cccccc;
 }
 
+.btn-social-facebook {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.btn-social-facebook:hover,
+.btn-social-facebook:focus,
+.btn-social-facebook:active,
+.btn-social-facebook.active,
+.open .dropdown-toggle.btn-social-facebook {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+
+.btn-social-facebook:active,
+.btn-social-facebook.active,
+.open .dropdown-toggle.btn-social-facebook {
+  background-image: url("Images/twitter-icon.png");
+}
+
+.btn-social-facebook.disabled,
+.btn-social-facebook[disabled],
+fieldset[disabled] .btn-social-facebook,
+.btn-social-facebook.disabled:hover,
+.btn-social-facebook[disabled]:hover,
+fieldset[disabled] .btn-social-facebook:hover,
+.btn-social-facebook.disabled:focus,
+.btn-social-facebook[disabled]:focus,
+fieldset[disabled] .btn-social-facebook:focus,
+.btn-social-facebook.disabled:active,
+.btn-social-facebook[disabled]:active,
+fieldset[disabled] .btn-social-facebook:active,
+.btn-social-facebook.disabled.active,
+.btn-social-facebook[disabled].active,
+fieldset[disabled] .btn-social-facebook.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
 .btn-primary {
   color: #ffffff;
   background-color: #428bca;
@@ -3361,6 +3402,10 @@ input[type="button"].btn-block {
   border-top-color: #333333;
 }
 
+.btn-social-facebook .caret {
+  border-top-color: #333333;
+}
+
 .btn-primary .caret,
 .btn-success .caret,
 .btn-warning .caret,
@@ -3370,6 +3415,10 @@ input[type="button"].btn-block {
 }
 
 .dropup .btn-default .caret {
+  border-bottom-color: #333333;
+}
+
+.dropup .btn-scocial-facebook .caret {
   border-bottom-color: #333333;
 }
 

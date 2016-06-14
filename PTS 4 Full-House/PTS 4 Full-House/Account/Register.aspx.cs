@@ -43,5 +43,15 @@ namespace PTS_4_Full_House.Account
                 ErrorMessage.Text = "This username is already in use";
             }
         }
+
+        protected void RegisterWithFacebook(object sender, EventArgs e)
+        {
+            return;
+        }
+
+        protected void RegisterWithTwitter(object sender, EventArgs e)
+        {
+            return;
+        }
     }
 }

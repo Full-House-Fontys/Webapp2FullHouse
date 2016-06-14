@@ -200,6 +200,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\twitter-icon.png" />
     <Content Include="TestingWebserviceServer.asmx" />
     <Content Include="Webpages\GetMessagesFromCims.aspx" />
     <Content Include="Webpages\Notification.aspx" />

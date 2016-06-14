@@ -63,5 +63,13 @@
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>
         </div>
+        <div>
+            <p>
+                <br /><br />
+                <asp:Label runat="server" CssClass="col-md-2 control-label">Register with: </asp:Label>
+                <asp:Button runat="server" OnClick="RegisterWithFacebook" Text="F" CssClass="btn btn-social-facebook" ImageUrl="Images/twitter-icon.png"/>
+                <asp:Button runat="server" OnClick="RegisterWithTwitter" Text="T" CssClass="btn btn-default" ImageUrl="Images/twitter-icon.png"/>
+            </p>
+        </div>  
     </div>
 </asp:Content>

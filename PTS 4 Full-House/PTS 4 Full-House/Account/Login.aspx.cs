@@ -45,6 +45,16 @@ namespace PTS_4_Full_House.Account
             }
         }
 
+        protected void LogInWithFacebook(object sender, EventArgs e)
+        {
+            return;
+        }
+
+        protected void LogInWithTwitter(object sender, EventArgs e)
+        {
+            return;
+        }
+
         private int checkUser(List<User> users) {
             int status = 0;
             foreach (User user in users) {
