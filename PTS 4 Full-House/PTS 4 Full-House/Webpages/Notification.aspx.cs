@@ -10,6 +10,14 @@ namespace PTS_4_Full_House
     public partial class Notification : Page
     {
         DatabaseConnection dbConnection;
+
+        /// <summary>
+        /// When the page load, it will check if an user is logged in.
+        /// If there is none logged in or the databaseConnection failed, the site will redirect to the Login page.
+        /// If an user is logged in, this page will load correctly.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             dbConnection = new DatabaseConnection();
@@ -26,6 +34,12 @@ namespace PTS_4_Full_House
             }
         }
 
+        /// <summary>
+        /// Creates a new notification and put it in the database.
+        /// If the Title.Text or the Messade.Text is empty, it will not send.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void MakeNotification(object sender, EventArgs e) {
 
             if (String.IsNullOrWhiteSpace(NotificationTitle.Text))
