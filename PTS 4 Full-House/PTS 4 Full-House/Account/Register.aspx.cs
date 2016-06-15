@@ -13,11 +13,24 @@ namespace PTS_4_Full_House.Account
     {
         DatabaseConnection dbConnection;
 
+        /// <summary>
+        /// Creates a new DatabaseConnection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             dbConnection = new DatabaseConnection();
         }
 
+        /// <summary>
+        /// If all fields are validated, this method will try to register a new user.
+        /// A new User object will be created witch all values filled in the web form.
+        /// First the username will be checked if it already occures in the database, if it does, an error will be displayd.
+        /// Last, the methode createNewUser() will be called with te new User as parameter.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             User newUser = new User(0, LastName.Text, Prefix.Text, FirstName.Text, Username.Text, Password.Text, null, null);

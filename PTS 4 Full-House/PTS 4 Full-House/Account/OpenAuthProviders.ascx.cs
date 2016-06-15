@@ -40,6 +40,11 @@ namespace PTS_4_Full_House.Account
             return Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().Select(t => t.AuthenticationType);
         }
 
+        /// <summary>
+        /// Navigates to the Facebook login page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void LogInWithFacebook(object sender, EventArgs e)
         {
             Response.Redirect("../Account/LoginFacebook.aspx");
