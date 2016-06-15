@@ -46,7 +46,8 @@ namespace PTS_4_Full_House
         }
 
         /// <summary>
-        /// 
+        /// Data of the current logged in user will be changed to the new inserted values.
+        /// They can not change their username if it already is taken by someone else.
         /// </summary>
         /// <param name="userID">The userID of the user who currently is logged in.</param>
         /// <param name="username">The username of the user who currently is logged in.</param>
