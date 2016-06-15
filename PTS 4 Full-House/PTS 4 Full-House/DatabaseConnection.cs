@@ -45,6 +45,32 @@ namespace PTS_4_Full_House
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userID">The userID of the user who currently is logged in.</param>
+        /// <param name="username">The username of the user who currently is logged in.</param>
+        /// <param name="user">User object with all new values for the logged in user.</param>
+        public void editUserInDatabase(string userID, string username, User user)
+        {
+            try
+            {
+                connString.Open();
+                String Command = "UPDATE Gebruiker SET Achternaam = '" + user.LastName + "', Tussenvoegsel = '" + user.Prefix + "', Voornaam = '" + user.LastName + "', Gebruikersnaam = '" + user.Username + "', Wachtwoord = '" + user.Password + "' WHERE Gebruikersnaam='" + username + "' AND id = '" + userID + "'";
+                SqlCommand sqlCommand = new SqlCommand(Command, connString);
+                SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+                sqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                throw exception;
+            }
+            finally
+            {
+                connString.Close();
+            }
+        }
+
         public List<User> getUsers()
         {
             getUsersFromDatabase();

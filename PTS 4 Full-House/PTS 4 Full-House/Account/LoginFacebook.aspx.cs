@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using PTS_4_Full_House.Models;
 using System.Collections.Generic;
-using ASPSnippets.FaceBookAPI;
+//using ASPSnippets.FaceBookAPI;
 using System.Web.Script.Serialization;
 
 namespace PTS_4_Full_House.Account
@@ -16,7 +16,7 @@ namespace PTS_4_Full_House.Account
         private DatabaseConnection dbConnection;
         protected void Page_Load(object sender, EventArgs e)
         {
-            FaceBookConnect.API_Key = "1062297970483328";
+            /*FaceBookConnect.API_Key = "1062297970483328";
             FaceBookConnect.API_Secret = "98c8cb8507322c4416957c41cf3a8855";
             if (!IsPostBack)
             {
@@ -40,12 +40,12 @@ namespace PTS_4_Full_House.Account
                     ProfileImage.ImageUrl = faceBookUser.PictureUrl;
                     btnLogin.Enabled = false;
                 }
-            }
+            }*/
         }
 
         protected void LogInWithFacebook(object sender, EventArgs e)
         {
-            FaceBookConnect.Authorize("user_photos,email", Request.Url.AbsoluteUri.Split('?')[0]);
+            //FaceBookConnect.Authorize("user_photos,email", Request.Url.AbsoluteUri.Split('?')[0]);
         }
 
         protected void LogInWithTwitter(object sender, EventArgs e)

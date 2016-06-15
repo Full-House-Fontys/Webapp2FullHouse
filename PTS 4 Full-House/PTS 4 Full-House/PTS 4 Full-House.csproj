@@ -184,6 +184,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\EditAccount.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\LoginFacebook.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
@@ -257,6 +258,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\EditAccount.aspx.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\EditAccount.aspx.designer.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\FaceBookUser.cs" />
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
