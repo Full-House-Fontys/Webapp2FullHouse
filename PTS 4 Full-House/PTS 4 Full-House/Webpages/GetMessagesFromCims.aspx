@@ -2,15 +2,17 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h1><%: Title %></h1>
+    
+    <div class="allMessages">
+        <asp:Panel ID="MessagePanel" runat="server">
+        </asp:Panel>
+
+    </div>
 
     <div class="airQuality">
         <h3>Luchtkwaliteit:</h3>
         <iframe class="airIFrame" src="https://www.luchtmeetnet.nl/""/>
     </div>
 
-    <div class="allMessages">
-        <asp:Panel ID="MessagePanel" runat="server">
-        </asp:Panel>
-
-    </div>
+    
 </asp:Content>
