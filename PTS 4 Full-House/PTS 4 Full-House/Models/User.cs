@@ -15,6 +15,7 @@ namespace PTS_4_Full_House
         public String Password { get; set; }
         public String Facebook { get; set; }
         public String Twitter { get; set; }
+
         public User(int Id,String lastName, String prefix, String firstName, String userName, String password, String facebook, String twitter)
         {
             this.Id = Id;

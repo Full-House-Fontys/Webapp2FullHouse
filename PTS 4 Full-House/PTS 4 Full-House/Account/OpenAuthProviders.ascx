@@ -15,8 +15,11 @@
         </ItemTemplate>
         <EmptyDataTemplate>
             <div>
-                <p>There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=252803">this article</a> for details on setting up this ASP.NET application to support logging in via external services.</p>
-            </div>
+                <p>
+                    <asp:Button runat="server" OnClick="LogInWithFacebook" CausesValidation="False" Text="F" CssClass="btn btn-social-facebook" ImageUrl="Images/twitter-icon.png"/>
+                    <asp:Button runat="server" OnClick="LogInWithTwitter" CausesValidation="False" Text="T" CssClass="btn btn-default" ImageUrl="Images/twitter-icon.png"/>
+                </p>
+            </div>   
         </EmptyDataTemplate>
     </asp:ListView>
 </div>

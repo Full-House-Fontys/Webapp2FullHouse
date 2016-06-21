@@ -25,6 +25,14 @@ namespace PTS_4_Full_House.Account
             }
         }
 
+        /// <summary>
+        /// If all fields are validated, this method will try to log in.
+        /// For each account in the database there will be checked if there is an match with the given username.
+        /// If there is a match, Session userId and Username will be assigned and the page will redirect to the Notification page.
+        /// If there is none match, an error will be displayed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void LogIn(object sender, EventArgs e)
         {
             if (IsValid)
@@ -45,16 +53,12 @@ namespace PTS_4_Full_House.Account
             }
         }
 
-        protected void LogInWithFacebook(object sender, EventArgs e)
-        {
-            return;
-        }
-
-        protected void LogInWithTwitter(object sender, EventArgs e)
-        {
-            return;
-        }
-
+        /// <summary>
+        /// This will check if the values form Username.Text and Password.Text have a match in the database.
+        /// If there is a match, the userId will be retured, else, 0 will be returned.
+        /// </summary>
+        /// <param name="users"></param>
+        /// <returns>0 if none match, userId if there is a match</returns>
         private int checkUser(List<User> users) {
             int status = 0;
             foreach (User user in users) {
