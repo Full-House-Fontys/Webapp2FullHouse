@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditAccount.aspx.cs" Inherits="PTS_4_Full_House.Account.EditAccount" %>
+﻿<%@ Page Title="Account aanpassen" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditAccount.aspx.cs" Inherits="PTS_4_Full_House.Account.EditAccount" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
@@ -7,7 +7,7 @@
     </p>
 
     <div class="form-horizontal">
-        <h4>Change personal data.</h4>
+        <h4>Account aanpassen.</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">

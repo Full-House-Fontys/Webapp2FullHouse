@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Log in Facebook" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginFacebook.aspx.cs" Inherits="PTS_4_Full_House.Account.LoginFacebook" Async="true" %>
+﻿<%@ Page Title="Log in met Facebook" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginFacebook.aspx.cs" Inherits="PTS_4_Full_House.Account.LoginFacebook" Async="true" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
@@ -9,7 +9,7 @@
         <div class="col-md-8">
             <section id="loginForm">
                 <div class="form-horizontal">
-                    <h4>Use a Facebook account to log in.</h4>
+                    <h4>Gebruik een Facebook account om in te loggen.</h4>
                     <hr />
 
                     <asp:Button ID="btnLogin" runat="server" Text="Login with FaceBook" OnClick="LogInWithFacebook" />

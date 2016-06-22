@@ -57,11 +57,11 @@
 
                     <div>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><asp:Label ID="HlRegister" runat="server"><a runat="server" href="~/Account/Register">Registreren</a></asp:Label></li>
-                            <li><a runat="server" href="~/Account/Login">Inloggen</a></li>
-                            <li><a runat="server" href="~/Account/EditAccount">Account aanpassen</a></li>
+                            <li><asp:Label ID="hlRegister" runat="server"><a runat="server" href="~/Account/Register">Registreren</a></asp:Label></li>
+                            <li><asp:Label ID="hlLogin" runat="server"><a runat="server" href="~/Account/Login">Inloggen</a></asp:Label></li>
+                            <li><asp:Label ID="hlEditAccount" runat="server"><a runat="server" href="~/Account/EditAccount">Account aanpassen</a></asp:Label></li>
                             <li>
-                                <asp:Label ID="lblUserLoggedin" runat="server" CssClass="col-md-2 control-label"></asp:Label></li>
+                                <asp:Label ID="lblUserLoggedin" runat="server" CssClass="col-md-2 control-label">Welkom, Jo</asp:Label></li>
                         </ul>
                     </div>
                 </div>

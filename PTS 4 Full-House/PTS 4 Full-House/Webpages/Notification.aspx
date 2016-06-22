@@ -2,14 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <div class="form-group">
-                        <asp:Label runat="server" AssociateID="NotificationTitle" CssClass="col-md-2 control-label">Title</asp:Label>
+                        <asp:Label runat="server" AssociateID="NotificationTitle" CssClass="col-md-2 control-label">Titel</asp:Label>
                         <div class="col-md-10">
                            <asp:TextBox runat="server" ID="NotificationTitle" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="NotificationTitle" CssClass="text-danger" ErrorMessage="The title field is required." />
                         </div>
      </div>
     <div class="form-group">
-                        <asp:Label runat="server" AssociateID="Message" CssClass="col-md-2 control-label">Message</asp:Label>
+                        <asp:Label runat="server" AssociateID="Message" CssClass="col-md-2 control-label">Bericht</asp:Label>
                         <div class="col-md-10">
                            <asp:TextBox runat="server" ID="Message" CssClass="form-control" />
                               <asp:RequiredFieldValidator runat="server" ControlToValidate="Message" CssClass="text-danger" ErrorMessage="The Message field is required." />

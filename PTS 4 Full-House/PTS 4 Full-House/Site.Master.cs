@@ -50,6 +50,30 @@ namespace PTS_4_Full_House
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
         {
+            if (Session["Username"] != null && !(String.IsNullOrWhiteSpace(Session["Username"].ToString())))
+            {
+                hlRegister.Text = String.Empty;
+                hlLogin.Text = String.Empty;
+                hlEditAccount.Text = "<a runat='server' href=\"../Account/EditAccount\">Account aanpassen</a>";
+                hlRegister.Enabled = false;
+                hlLogin.Enabled = false;
+                hlEditAccount.Enabled = true;
+
+                lblUserLoggedin.Text = (string)Session["Username"];
+            }
+            else if (Session["Username"] == null || !(String.IsNullOrWhiteSpace(Session["Username"].ToString())))
+            {
+                hlRegister.Text = "<a runat='server' href=\"../Account/Register\">Registreren</a>";
+                hlLogin.Text = "<a runat='server' href='../Account/Login'>Inloggen</a>";
+                hlEditAccount.Text = String.Empty;
+                hlRegister.Enabled = true;
+                hlLogin.Enabled = true;
+                hlEditAccount.Enabled = false;
+
+                lblUserLoggedin.Text = "";
+            }
+
+
             if (!IsPostBack)
             {
                 // Set Anti-XSRF token
@@ -69,10 +93,6 @@ namespace PTS_4_Full_House
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (Session["Username"] != null && String.IsNullOrWhiteSpace(Session["Username"].ToString())){
-                LoginView lv = new LoginView();
-                lv.EnableViewState = false;
-            }*/
             
         }
 

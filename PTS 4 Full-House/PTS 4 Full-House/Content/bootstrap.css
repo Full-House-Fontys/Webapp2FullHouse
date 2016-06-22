@@ -4054,6 +4054,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
                 background-color: #eeeeee;
             }
 
+        .nav > li > span {
+            position: relative;
+            display: block;
+            padding: 15px 15px;
+        }
+
+            .nav > li > span > a:hover,
+            .nav > li > span > a:focus {
+                text-decoration: none;
+                background-color: #eeeeee;
+            }
+
         .nav > li.disabled > a {
             color: #999999;
         }
@@ -4772,7 +4784,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     }
 
     .navbar-inverse .navbar-nav > li > span {
-        color: #999999;
+        color: #dddddd;
     }
 
     .navbar-inverse .navbar-nav > li > a:hover,
@@ -4840,12 +4852,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
         background-color: #080808;
     }
 
-        .navbar-inverse .navbar-nav > .open > span > a,
-        .navbar-inverse .navbar-nav > .open > span > a:hover,
-        .navbar-inverse .navbar-nav > .open > span > a:focus {
-            color: #ffffff;
-            background-color: #080808;
-        }
+    .navbar-inverse .navbar-nav > .open > span > a,
+    .navbar-inverse .navbar-nav > .open > span > a:hover,
+    .navbar-inverse .navbar-nav > .open > span > a:focus {
+        color: #ffffff;
+        background-color: #080808;
+    }
 
     .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
         border-top-color: #ffffff;
