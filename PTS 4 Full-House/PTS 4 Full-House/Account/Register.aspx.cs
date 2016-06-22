@@ -44,7 +44,7 @@ namespace PTS_4_Full_House.Account
                 try
                 {
                     dbConnection.createNewUser(newUser);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    Response.Redirect("../Webpages/Default.aspx");
                 }
                 catch (Exception exception) {
                     ErrorMessage.Text = "Lost connection";
