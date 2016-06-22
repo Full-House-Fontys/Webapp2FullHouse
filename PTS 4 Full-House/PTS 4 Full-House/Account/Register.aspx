@@ -17,15 +17,7 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                     CssClass="text-danger" ErrorMessage="Gebruikersnaam is vereist" />
             </div>
-        </div>
-        <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Wachtwoord</asp:Label>
-            <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
-                    CssClass="text-danger" ErrorMessage="Wachtwoord is vereist" />
-            </div>
-        </div>
+        </div>  
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">Voornaam</asp:Label>
             <div class="col-md-10">
@@ -49,6 +41,14 @@
             </div>
         </div>
         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Wachtwoord</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                    CssClass="text-danger" ErrorMessage="Wachtwoord is vereist" />
+            </div>
+        </div>
+        <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Bevestig wachtwoord</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
@@ -64,12 +64,12 @@
             </div>
         </div>
         <div>
-            <p>
+            <!--<p>
                 <br /><br />
                 <asp:Label runat="server" CssClass="col-md-2 control-label">Register with: </asp:Label>
                 <asp:Button runat="server" OnClick="RegisterWithFacebook" Text="F" CssClass="btn btn-social-facebook" ImageUrl="Images/twitter-icon.png"/>
                 <asp:Button runat="server" OnClick="RegisterWithTwitter" Text="T" CssClass="btn btn-default" ImageUrl="Images/twitter-icon.png"/>
-            </p>
+            </p>-->
         </div>  
     </div>
 </asp:Content>

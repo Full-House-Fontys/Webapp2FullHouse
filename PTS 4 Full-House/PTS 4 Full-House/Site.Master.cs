@@ -54,21 +54,25 @@ namespace PTS_4_Full_House
             {
                 hlRegister.Text = String.Empty;
                 hlLogin.Text = String.Empty;
-                hlEditAccount.Text = "<a runat='server' href=\"../Account/EditAccount\">Account aanpassen</a>";
+                hlEditAccount.Text = "<a runat='server' href='../Account/EditAccount'>Account aanpassen</a>";
+                hlLogOut.Text = "<a runat='server' href='../Account/LogOut'>Uitloggen</a>";
                 hlRegister.Enabled = false;
                 hlLogin.Enabled = false;
                 hlEditAccount.Enabled = true;
+                hlLogOut.Enabled = true;
 
                 lblUserLoggedin.Text = (string)Session["Username"];
             }
             else if (Session["Username"] == null || !(String.IsNullOrWhiteSpace(Session["Username"].ToString())))
             {
-                hlRegister.Text = "<a runat='server' href=\"../Account/Register\">Registreren</a>";
+                hlRegister.Text = "<a runat='server' href='../Account/Register'>Registreren</a>";
                 hlLogin.Text = "<a runat='server' href='../Account/Login'>Inloggen</a>";
                 hlEditAccount.Text = String.Empty;
+                hlLogOut.Text = String.Empty;
                 hlRegister.Enabled = true;
                 hlLogin.Enabled = true;
                 hlEditAccount.Enabled = false;
+                hlLogOut.Enabled = false;
 
                 lblUserLoggedin.Text = "";
             }

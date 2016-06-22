@@ -187,6 +187,7 @@
     <Content Include="Account\EditAccount.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\LoginFacebook.aspx" />
+    <Content Include="Account\LogOut.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -281,6 +282,13 @@
     </Compile>
     <Compile Include="Account\LoginFacebook.aspx.designer.cs">
       <DependentUpon>LoginFacebook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>

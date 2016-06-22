@@ -52,6 +52,7 @@ namespace PTS_4_Full_House
                 try
                 {
                     dbConnection.makeNotification(NotificationTitle.Text, Message.Text, Convert.ToInt32(Session["UserId"]));
+                    Response.Redirect("../Webpages/GetMessagesFromCims.aspx");
                 }
                 catch (Exception exception)
                 {
