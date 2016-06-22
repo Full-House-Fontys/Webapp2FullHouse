@@ -58,7 +58,7 @@ namespace PTS_4_Full_House.Account
             {
                 try
                 {
-                    dbConnection.editUserInDatabase((string)Session["UserId"], (string)Session["Username"], newUser);
+                    dbConnection.editUserInDatabase((Int32)Session["UserId"], (string)Session["Username"], newUser);
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                 }
                 catch (Exception exception)

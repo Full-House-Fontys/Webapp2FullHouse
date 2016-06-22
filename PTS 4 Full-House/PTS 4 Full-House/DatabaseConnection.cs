@@ -24,12 +24,13 @@ namespace PTS_4_Full_House
 
         private void getUsersFromDatabase()
         {
+            SqlDataReader sqlReader = null;
             try
             {
                 connString.Open();
                 String Command = "Select * FROM Gebruiker;";
                 SqlCommand sqlCommand = new SqlCommand(Command, connString);
-                SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+                sqlReader = sqlCommand.ExecuteReader();
                 while (sqlReader.Read())
                 {
                     users.Add(new User(Convert.ToInt32(sqlReader["ID"].ToString()),sqlReader["Achternaam"].ToString(), sqlReader["Tussenvoegsel"].ToString(), sqlReader["Voornaam"].ToString(), sqlReader["Gebruikersnaam"].ToString(), sqlReader["Wachtwoord"].ToString(), sqlReader["Facebook"].ToString(), sqlReader["Twitter"].ToString()));
@@ -41,6 +42,7 @@ namespace PTS_4_Full_House
             }
             finally
             {
+                sqlReader.Close();
                 connString.Close();
             }
         }
@@ -52,14 +54,15 @@ namespace PTS_4_Full_House
         /// <param name="userID">The userID of the user who currently is logged in.</param>
         /// <param name="username">The username of the user who currently is logged in.</param>
         /// <param name="user">User object with all new values for the logged in user.</param>
-        public void editUserInDatabase(string userID, string username, User user)
+        public void editUserInDatabase(Int32 userID, string username, User user)
         {
+            SqlDataReader sqlReader = null;
             try
             {
                 connString.Open();
                 String Command = "UPDATE Gebruiker SET Achternaam = '" + user.LastName + "', Tussenvoegsel = '" + user.Prefix + "', Voornaam = '" + user.LastName + "', Gebruikersnaam = '" + user.Username + "', Wachtwoord = '" + user.Password + "' WHERE Gebruikersnaam='" + username + "' AND id = '" + userID + "'";
                 SqlCommand sqlCommand = new SqlCommand(Command, connString);
-                SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+                sqlReader = sqlCommand.ExecuteReader();
                 sqlCommand.ExecuteNonQuery();
             }
             catch (Exception exception)
@@ -68,6 +71,7 @@ namespace PTS_4_Full_House
             }
             finally
             {
+                sqlReader.Close();
                 connString.Close();
             }
         }

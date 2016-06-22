@@ -74,5 +74,17 @@ namespace PTS_4_Full_House.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::PTS_4_Full_House.Account.OpenAuthProviders OpenAuthLogin;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new PTS_4_Full_House.SiteMaster Master {
+            get {
+                return ((PTS_4_Full_House.SiteMaster)(base.Master));
+            }
+        }
     }
 }

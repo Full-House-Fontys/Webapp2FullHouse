@@ -44,7 +44,7 @@ namespace PTS_4_Full_House
                 }
                 Response.Cookies.Set(responseCookie);
             }
-
+            
             Page.PreLoad += master_Page_PreLoad;
         }
 
@@ -73,6 +73,7 @@ namespace PTS_4_Full_House
                 LoginView lv = new LoginView();
                 lv.EnableViewState = false;
             }*/
+            
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

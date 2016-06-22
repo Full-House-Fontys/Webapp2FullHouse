@@ -22,6 +22,7 @@ namespace PTS_4_Full_House.Account
             if (!String.IsNullOrEmpty(returnUrl)) 
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+          
             }
         }
 
